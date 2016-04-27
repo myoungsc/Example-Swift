@@ -41,7 +41,7 @@ class Vc_fileReference: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        //된거야?
+        
     }
 
     //MARK: Init-Method
