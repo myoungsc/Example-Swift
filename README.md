@@ -2,7 +2,8 @@
 Swift Example
 
 # Development Environment
-  - xcode Version 7.3
+  - Xcode Version 7.3
+  - Swift 2.x
   - Deployment Target 9.3
   - Use iPhone Simulator
   - Use not AutoLayout
