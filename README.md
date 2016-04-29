@@ -13,6 +13,7 @@ Swift Example
   - Create folder in document
   - Write image and text in create folder
   - Load image and text in create folder
+  - Remove file from file path
 
 
 # License
