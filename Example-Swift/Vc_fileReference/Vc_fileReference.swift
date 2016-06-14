@@ -39,6 +39,14 @@ class Vc_fileReference: UIViewController {
         // your mac Click finder after commend+shift+G(hot key)
         let homeDir = NSHomeDirectory()
         print(homeDir)
+        
+        
+        let filemanager:NSFileManager = NSFileManager()
+        let files = filemanager.enumeratorAtPath(homeDir)
+        while let file = files?.nextObject() {
+            print("file list = \(file)")
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -169,10 +177,18 @@ class Vc_fileReference: UIViewController {
     func btn_imgLoadB(sender: UIButton) {
         // get file path
         let str_fileName = return_makeDirPath("korea_actor_suji.jpg")
-        let img_loadImage = UIImage.init(contentsOfFile: str_fileName)!
         
-        iv_loadImg.image = img_loadImage
-        iv_loadImg.hidden = false
+        //Optional Check
+        if let image = UIImage(contentsOfFile: str_fileName) {
+            let img_loadImage = image
+            iv_loadImg.image = img_loadImage
+            iv_loadImg.hidden = false
+        } else {
+            print("not file")
+        }
+        
+        
+        
     }
  
     // Load Text-File in Create_Folder

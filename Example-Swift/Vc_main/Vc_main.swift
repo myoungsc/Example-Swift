@@ -61,9 +61,7 @@ class Vc_main: UIViewController, UITableViewDelegate, UITableViewDataSource {
     //init_data
     func init_data() {
         
-        arr_title = ["File Reference"]
-        
-        
+        arr_title = ["File Reference", "TTS"]
         
     }
     
@@ -98,8 +96,10 @@ class Vc_main: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         switch arr_title[indexPath.row] {
             
-        case "File Reference":
+        case "File Reference" :
             self.navigationController?.pushViewController(Vc_fileReference(), animated: true)
+        case "TTS" :
+            self.navigationController?.pushViewController(Vc_TTS(), animated: true)
         default:
             break
        
