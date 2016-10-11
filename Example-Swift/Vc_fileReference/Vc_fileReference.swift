@@ -41,8 +41,8 @@ class Vc_fileReference: UIViewController {
         print(homeDir)
         
         
-        let filemanager:NSFileManager = NSFileManager()
-        let files = filemanager.enumeratorAtPath(homeDir)
+        let filemanager:FileManager = FileManager()
+        let files = filemanager.enumerator(atPath: homeDir)
         while let file = files?.nextObject() {
             print("file list = \(file)")
         }
@@ -58,75 +58,75 @@ class Vc_fileReference: UIViewController {
     // init-frame
     func init_frame() {
         
-        view_top.frame = CGRectMake(0, 0, screenWidth, 64)
-        iv_topLine.frame = CGRectMake(0, 63, screenWidth, 1)
-        lb_topTitle.frame = CGRectMake(0, 20, screenWidth, 44)
-        btn_back.frame = CGRectMake(5, 20, 44, 44)
-        btn_back.addTarget(self, action: #selector(Vc_fileReference.btn_backB(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        view_top.frame = CGRect(x: 0, y: 0, width: screenWidth, height: 64)
+        iv_topLine.frame = CGRect(x: 0, y: 63, width: screenWidth, height: 1)
+        lb_topTitle.frame = CGRect(x: 0, y: 20, width: screenWidth, height: 44)
+        btn_back.frame = CGRect(x: 5, y: 20, width: 44, height: 44)
+        btn_back.addTarget(self, action: #selector(Vc_fileReference.btn_backB(_:)), for: UIControlEvents.touchUpInside)
         
         
-        sc_fileRef.frame = CGRectMake(0, 64, screenWidth, screenHeight-64)
+        sc_fileRef.frame = CGRect(x: 0, y: 64, width: screenWidth, height: screenHeight-64)
         
         var viewy : CGFloat = 20
-        btn_folderCreate.frame = CGRectMake(15, viewy, screenWidth-30, 30)
-        btn_folderCreate.addTarget(self, action: #selector(Vc_fileReference.btn_folderCreateB(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        btn_folderCreate.frame = CGRect(x: 15, y: viewy, width: screenWidth-30, height: 30)
+        btn_folderCreate.addTarget(self, action: #selector(Vc_fileReference.btn_folderCreateB(_:)), for: UIControlEvents.touchUpInside)
         
-        viewy = method().viewBetweenFrame(btn_folderCreate.frame)+50
-        btn_imgSave.frame = CGRectMake(15, viewy, screenWidth-30, 30)
-        btn_imgSave.addTarget(self, action: #selector(Vc_fileReference.btn_saveImgFile(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        viewy = Method().viewBetweenFrame(btn_folderCreate.frame)+50
+        btn_imgSave.frame = CGRect(x: 15, y: viewy, width: screenWidth-30, height: 30)
+        btn_imgSave.addTarget(self, action: #selector(Vc_fileReference.btn_saveImgFile(_:)), for: UIControlEvents.touchUpInside)
         
-        viewy = method().viewBetweenFrame(btn_imgSave.frame)+20
-        btn_textSave.frame = CGRectMake(15, viewy, screenWidth-30, 30)
-        btn_textSave.addTarget(self, action: #selector(Vc_fileReference.btn_saveTextFile(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        viewy = Method().viewBetweenFrame(btn_imgSave.frame)+20
+        btn_textSave.frame = CGRect(x: 15, y: viewy, width: screenWidth-30, height: 30)
+        btn_textSave.addTarget(self, action: #selector(Vc_fileReference.btn_saveTextFile(_:)), for: UIControlEvents.touchUpInside)
         
-        viewy = method().viewBetweenFrame(btn_textSave.frame)+50
-        btn_imgLoad.frame = CGRectMake(15, viewy, screenWidth-30, 30)
-        btn_imgLoad.addTarget(self, action: #selector(Vc_fileReference.btn_imgLoadB(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        viewy = Method().viewBetweenFrame(btn_textSave.frame)+50
+        btn_imgLoad.frame = CGRect(x: 15, y: viewy, width: screenWidth-30, height: 30)
+        btn_imgLoad.addTarget(self, action: #selector(Vc_fileReference.btn_imgLoadB(_:)), for: UIControlEvents.touchUpInside)
         
-        viewy = method().viewBetweenFrame(btn_imgLoad.frame)+20
-        btn_textLoad.frame = CGRectMake(15, viewy, screenWidth-30, 30)
-        btn_textLoad.addTarget(self, action: #selector(Vc_fileReference.btn_textLoadB(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        viewy = Method().viewBetweenFrame(btn_imgLoad.frame)+20
+        btn_textLoad.frame = CGRect(x: 15, y: viewy, width: screenWidth-30, height: 30)
+        btn_textLoad.addTarget(self, action: #selector(Vc_fileReference.btn_textLoadB(_:)), for: UIControlEvents.touchUpInside)
         
         
-        viewy = method().viewBetweenFrame(btn_textLoad.frame)+50
-        btn_delPath.frame = CGRectMake(15, viewy, screenWidth-30, 30)
-        btn_delPath.addTarget(self, action: #selector(Vc_fileReference.btn_delPathB(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        viewy = Method().viewBetweenFrame(btn_textLoad.frame)+50
+        btn_delPath.frame = CGRect(x: 15, y: viewy, width: screenWidth-30, height: 30)
+        btn_delPath.addTarget(self, action: #selector(Vc_fileReference.btn_delPathB(_:)), for: UIControlEvents.touchUpInside)
         
         // Crate UIImageVIew, and UIButton.
         // Because UIImageView is Load Image See and UIButton is Delete UIImageview.
-        viewy = method().viewBetweenFrame(btn_delPath.frame)+20
+        viewy = Method().viewBetweenFrame(btn_delPath.frame)+20
         
-        iv_loadImg.frame =  CGRectMake(15, viewy, screenWidth-30, screenWidth-30)
-        iv_loadImg.contentMode = UIViewContentMode.ScaleAspectFit
-        iv_loadImg.hidden = true
+        iv_loadImg.frame =  CGRect(x: 15, y: viewy, width: screenWidth-30, height: screenWidth-30)
+        iv_loadImg.contentMode = UIViewContentMode.scaleAspectFit
+        iv_loadImg.isHidden = true
         sc_fileRef.addSubview(iv_loadImg)
         
-        btn_hideIv.frame = CGRectMake(15, viewy, screenWidth-30, screenWidth-30)
-        btn_hideIv.addTarget(self, action: #selector(Vc_fileReference.btn_hideIvB(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        btn_hideIv.frame = CGRect(x: 15, y: viewy, width: screenWidth-30, height: screenWidth-30)
+        btn_hideIv.addTarget(self, action: #selector(Vc_fileReference.btn_hideIvB(_:)), for: UIControlEvents.touchUpInside)
         sc_fileRef.addSubview(btn_hideIv)
         
         
-        let f_height = method().viewBetweenFrame(btn_hideIv.frame)+20
-        sc_fileRef.contentSize = CGSizeMake(screenWidth, f_height)
+        let f_height = Method().viewBetweenFrame(btn_hideIv.frame)+20
+        sc_fileRef.contentSize = CGSize(width: screenWidth, height: f_height)
     }
     
     //MARK: UIButton-Method
     // back to main
-    func btn_backB(sender: UIButton) {
-        self.navigationController?.popViewControllerAnimated(true)
+    func btn_backB(_ sender: UIButton) {
+        let _ = self.navigationController?.popViewController(animated: true)
     }
         
     
     // Folder_Create
-    func btn_folderCreateB(sender: UIButton) {
+    func btn_folderCreateB(_ sender: UIButton) {
         
-        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         let str_dir = paths[0]
         let str_createDir = str_dir+"/FolderName"
         
-        if !(NSFileManager.defaultManager().fileExistsAtPath(str_createDir)) {
+        if !(FileManager.default.fileExists(atPath: str_createDir)) {
             do {
-                try NSFileManager.defaultManager().createDirectoryAtPath(str_createDir, withIntermediateDirectories: false, attributes: nil)
+                try FileManager.default.createDirectory(atPath: str_createDir, withIntermediateDirectories: false, attributes: nil)
             } catch {
                 let error = error as NSError
                 NSLog(" error =  \(error.localizedDescription)")
@@ -136,33 +136,33 @@ class Vc_fileReference: UIViewController {
     
     
     // save Image-File in Create_Folder
-    func btn_saveImgFile(sender: UIButton) {
+    func btn_saveImgFile(_ sender: UIButton) {
         
         let img_save = UIImage(named: "korea_actor_suji.jpg")
         
         //UIImage change NSData
-        let data_save : NSData = UIImageJPEGRepresentation(img_save!, 1.0)!
+        let data_save : Data = UIImageJPEGRepresentation(img_save!, 1.0)!
         
         //Data write create Folder
         let str_saveFilePath = return_makeDirPath("korea_actor_suji.jpg")
         
-        if !(NSFileManager.defaultManager().fileExistsAtPath(str_saveFilePath)) {
-            data_save.writeToFile(str_saveFilePath, atomically: true)
+        if !(FileManager.default.fileExists(atPath: str_saveFilePath)) {
+            try? data_save.write(to: URL(fileURLWithPath: str_saveFilePath), options: [.atomic])
         } else {
             print("Already exist FileName")
         }
     }
     
     // save Text-File in Create_Folder
-    func btn_saveTextFile(sender: UIButton) {
+    func btn_saveTextFile(_ sender: UIButton) {
         
         let str_save = "Hello \nMy Name is Myoung"
         //Data write create Folder
         let str_saveFilePath = return_makeDirPath("Introduce.txt")
        
-        if !(NSFileManager.defaultManager().fileExistsAtPath(str_saveFilePath)) {
+        if !(FileManager.default.fileExists(atPath: str_saveFilePath)) {
             do {
-                try str_save.writeToFile(str_saveFilePath, atomically: false, encoding: NSUTF8StringEncoding)
+                try str_save.write(toFile: str_saveFilePath, atomically: false, encoding: String.Encoding.utf8)
             }catch {
                 let error = error as NSError
                 NSLog(" error =  \(error.localizedDescription)")
@@ -174,7 +174,7 @@ class Vc_fileReference: UIViewController {
     }
     
     // Load Image-File in Create_Folder
-    func btn_imgLoadB(sender: UIButton) {
+    func btn_imgLoadB(_ sender: UIButton) {
         // get file path
         let str_fileName = return_makeDirPath("korea_actor_suji.jpg")
         
@@ -182,7 +182,7 @@ class Vc_fileReference: UIViewController {
         if let image = UIImage(contentsOfFile: str_fileName) {
             let img_loadImage = image
             iv_loadImg.image = img_loadImage
-            iv_loadImg.hidden = false
+            iv_loadImg.isHidden = false
         } else {
             print("not file")
         }
@@ -192,13 +192,13 @@ class Vc_fileReference: UIViewController {
     }
  
     // Load Text-File in Create_Folder
-    func btn_textLoadB(sender: UIButton) {
+    func btn_textLoadB(_ sender: UIButton) {
         // get file path
         let str_fileName = return_makeDirPath("Introduce.txt")
         
         var str_loadText : String = ""
         do{
-            str_loadText = try String(contentsOfFile: str_fileName, encoding: NSUTF8StringEncoding)
+            str_loadText = try String(contentsOfFile: str_fileName, encoding: String.Encoding.utf8)
         }catch {
             let error = error as NSError
             NSLog(" error =  \(error.localizedDescription)")
@@ -211,11 +211,11 @@ class Vc_fileReference: UIViewController {
     
     
     // Delete File Path
-    func btn_delPathB(sender: UIButton) {
+    func btn_delPathB(_ sender: UIButton) {
         
         //get file path
         
-        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         let str_dir = paths[0]
         //Folder
         let str_folderDir = str_dir+"/FolderName"
@@ -224,9 +224,9 @@ class Vc_fileReference: UIViewController {
         // Text
         //let str_textFilePath = str_folderDir + "/Introduce.txt"
         
-        if (NSFileManager.defaultManager().fileExistsAtPath(str_folderDir)) {
+        if (FileManager.default.fileExists(atPath: str_folderDir)) {
             do {
-                try  NSFileManager.defaultManager().removeItemAtPath(str_folderDir)
+                try  FileManager.default.removeItem(atPath: str_folderDir)
                 print("success")
             }catch {
                 let error = error as NSError
@@ -238,18 +238,18 @@ class Vc_fileReference: UIViewController {
     }
     
     // iv_loadImg is hidden 
-    func btn_hideIvB(sender: UIButton) {
-        if !iv_loadImg.hidden {
-            iv_loadImg.hidden = true
+    func btn_hideIvB(_ sender: UIButton) {
+        if !iv_loadImg.isHidden {
+            iv_loadImg.isHidden = true
         }
     }
     
  
     //MARK: Etc-Method
     // Return-Make dir path + file_name
-    func return_makeDirPath(str_fileName: String) -> String {
+    func return_makeDirPath(_ str_fileName: String) -> String {
         
-        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         let str_dir = paths[0]
         
         let str_returnDir = str_dir+"/FolderName"+"/\(str_fileName)"

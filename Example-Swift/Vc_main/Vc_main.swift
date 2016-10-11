@@ -22,8 +22,8 @@ class Vc_main: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationController?.navigationBarHidden = true
-        view.backgroundColor = UIColor.whiteColor()
+        self.navigationController?.isNavigationBarHidden = true
+        view.backgroundColor = UIColor.white
         
         init_data()
         init_main()
@@ -39,21 +39,15 @@ class Vc_main: UIViewController, UITableViewDelegate, UITableViewDataSource {
     //MARK: init-method
     func init_main() {
         
-        view_top.frame = CGRectMake(0, 0, screenWidth, 64)
-        iv_topline.frame = CGRectMake(0, 63, screenWidth, 1)
-        lb_topTitle.frame = CGRectMake(0, 20, screenWidth, 44)
+        view_top.frame = CGRect(x: 0, y: 0, width: screenWidth, height: 64)
+        iv_topline.frame = CGRect(x: 0, y: 63, width: screenWidth, height: 1)
+        lb_topTitle.frame = CGRect(x: 0, y: 20, width: screenWidth, height: 44)
         
-        tb_main.frame = CGRectMake(0, 64, screenWidth, screenHeight-64)
+        tb_main.frame = CGRect(x: 0, y: 64, width: screenWidth, height: screenHeight-64)
         tb_main.delegate = self
         tb_main.dataSource = self
-        tb_main.registerNib(UINib(nibName: "Cell_main", bundle: nil), forCellReuseIdentifier: "cell")
+        tb_main.register(UINib(nibName: "Cell_main", bundle: nil), forCellReuseIdentifier: "cell")
         //tb_main.separatorStyle = UITableViewCellSeparatorStyle.None
-        
-        
-        
-        
-        
-        
         
     }
 
@@ -69,21 +63,21 @@ class Vc_main: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     //MARK: UITableView Delegate and DataSource
     //Table cell count
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arr_title.count
     }
     
     //table cell height
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 45
     }
     
     //table cell init
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! Cell_main
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! Cell_main
         
-        cell.lb_title.text = arr_title[indexPath.row]
+        cell.lb_title.text = arr_title[(indexPath as NSIndexPath).row]
         
         
         return cell
@@ -91,10 +85,10 @@ class Vc_main: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     //table cell selector
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         
-        switch arr_title[indexPath.row] {
+        switch arr_title[(indexPath as NSIndexPath).row] {
             
         case "File Reference" :
             self.navigationController?.pushViewController(Vc_fileReference(), animated: true)
@@ -111,7 +105,7 @@ class Vc_main: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         
         
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
        
         
        

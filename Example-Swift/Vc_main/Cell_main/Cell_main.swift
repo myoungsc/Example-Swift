@@ -16,13 +16,13 @@ class Cell_main: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        lb_title.frame = CGRectMake(20, 0 , screenWidth-40, 45)
+        lb_title.frame = CGRect(x: 20, y: 0 , width: screenWidth-40, height: 45)
         
         
         
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         

@@ -15,7 +15,7 @@
 		8F3C331F1CD08916003D93B2 /* Example_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3C331E1CD08916003D93B2 /* Example_SwiftUITests.swift */; };
 		8F3C332F1CD08C1F003D93B2 /* Vc_main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3C332D1CD08C1F003D93B2 /* Vc_main.swift */; };
 		8F3C33301CD08C1F003D93B2 /* Vc_main.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F3C332E1CD08C1F003D93B2 /* Vc_main.xib */; };
-		8F3C33331CD08CF1003D93B2 /* method.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3C33321CD08CF1003D93B2 /* method.swift */; };
+		8F3C33331CD08CF1003D93B2 /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3C33321CD08CF1003D93B2 /* Method.swift */; };
 		8F3C33371CD08E44003D93B2 /* Cell_main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3C33351CD08E44003D93B2 /* Cell_main.swift */; };
 		8F3C33381CD08E44003D93B2 /* Cell_main.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F3C33361CD08E44003D93B2 /* Cell_main.xib */; };
 		8F3C333C1CD0905A003D93B2 /* Vc_fileReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3C333A1CD0905A003D93B2 /* Vc_fileReference.swift */; };
@@ -57,7 +57,7 @@
 		8F3C33201CD08916003D93B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F3C332D1CD08C1F003D93B2 /* Vc_main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Vc_main.swift; path = Vc_main/Vc_main.swift; sourceTree = "<group>"; };
 		8F3C332E1CD08C1F003D93B2 /* Vc_main.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Vc_main.xib; path = Vc_main/Vc_main.xib; sourceTree = "<group>"; };
-		8F3C33321CD08CF1003D93B2 /* method.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = method.swift; path = method/method.swift; sourceTree = "<group>"; };
+		8F3C33321CD08CF1003D93B2 /* Method.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Method.swift; path = method/Method.swift; sourceTree = "<group>"; };
 		8F3C33351CD08E44003D93B2 /* Cell_main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cell_main.swift; path = Vc_main/Cell_main/Cell_main.swift; sourceTree = "<group>"; };
 		8F3C33361CD08E44003D93B2 /* Cell_main.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Cell_main.xib; path = Vc_main/Cell_main/Cell_main.xib; sourceTree = "<group>"; };
 		8F3C333A1CD0905A003D93B2 /* Vc_fileReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Vc_fileReference.swift; path = Vc_fileReference/Vc_fileReference.swift; sourceTree = "<group>"; };
@@ -160,7 +160,7 @@
 		8F3C33311CD08CDF003D93B2 /* method */ = {
 			isa = PBXGroup;
 			children = (
-				8F3C33321CD08CF1003D93B2 /* method.swift */,
+				8F3C33321CD08CF1003D93B2 /* Method.swift */,
 			);
 			name = method;
 			sourceTree = "<group>";
@@ -263,18 +263,21 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = myoung;
 				TargetAttributes = {
 					8F3C32F71CD08916003D93B2 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0800;
 					};
 					8F3C330E1CD08916003D93B2 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0800;
 						TestTargetID = 8F3C32F71CD08916003D93B2;
 					};
 					8F3C33191CD08916003D93B2 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0800;
 						TestTargetID = 8F3C32F71CD08916003D93B2;
 					};
 				};
@@ -338,7 +341,7 @@
 				8F3C333C1CD0905A003D93B2 /* Vc_fileReference.swift in Sources */,
 				8F4E99321CE70D4F007118C6 /* Vc_TTS.swift in Sources */,
 				8F3C33371CD08E44003D93B2 /* Cell_main.swift in Sources */,
-				8F3C33331CD08CF1003D93B2 /* method.swift in Sources */,
+				8F3C33331CD08CF1003D93B2 /* Method.swift in Sources */,
 				8F3C332F1CD08C1F003D93B2 /* Vc_main.swift in Sources */,
 				8F3C32FC1CD08916003D93B2 /* AppDelegate.swift in Sources */,
 				8F3C33041CD08916003D93B2 /* Example_Swift.xcdatamodeld in Sources */,
@@ -402,8 +405,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -447,8 +452,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -467,6 +474,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -479,6 +487,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "kr.myoung.Example-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -490,6 +499,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "kr.myoung.Example-Swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -501,6 +511,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "kr.myoung.Example-SwiftTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Example-Swift.app/Example-Swift";
 			};
 			name = Debug;
@@ -513,6 +524,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "kr.myoung.Example-SwiftTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Example-Swift.app/Example-Swift";
 			};
 			name = Release;
@@ -524,6 +536,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "kr.myoung.Example-SwiftUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "Example-Swift";
 			};
 			name = Debug;
@@ -535,6 +548,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "kr.myoung.Example-SwiftUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "Example-Swift";
 			};
 			name = Release;

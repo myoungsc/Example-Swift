@@ -9,16 +9,16 @@
 import UIKit
 
 //Device Screen Size
-let screenWidth : CGFloat = UIScreen.mainScreen().bounds.size.width
-let screenHeight : CGFloat = UIScreen.mainScreen().bounds.size.height
+let screenWidth : CGFloat = UIScreen.main.bounds.size.width
+let screenHeight : CGFloat = UIScreen.main.bounds.size.height
 
 
-class method: NSObject {
+class Method: NSObject {
     
    
     
     //Return view Frame (y + height)
-    func viewBetweenFrame (frame : CGRect) -> CGFloat {
+    func viewBetweenFrame (_ frame : CGRect) -> CGFloat {
         return frame.size.height + frame.origin.y
     }
     

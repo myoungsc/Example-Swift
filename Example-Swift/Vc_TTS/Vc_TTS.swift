@@ -28,20 +28,20 @@ class Vc_TTS: UIViewController {
     }
     
     //MARK: ***** Button method *****
-    func btn_backB(sender: UIButton) {
-        self.navigationController?.popViewControllerAnimated(true)
+    func btn_backB(_ sender: UIButton) {
+        let _ = self.navigationController?.popViewController(animated: true)
     }
 
     //MARK: ***** init method *****
     func init_main() {
         
-        view_top.frame = CGRectMake(0, 0, screenWidth, 64)
+        view_top.frame = CGRect(x: 0, y: 0, width: screenWidth, height: 64)
         
-        lb_title.frame = CGRectMake(0, 20, screenWidth, 44)
+        lb_title.frame = CGRect(x: 0, y: 20, width: screenWidth, height: 44)
         
-        btn_back.frame = CGRectMake(0, 20, 44, 44)
-        btn_back.addTarget(self, action: #selector(Vc_TTS.btn_backB(_:)), forControlEvents: .TouchUpInside)
+        btn_back.frame = CGRect(x: 0, y: 20, width: 44, height: 44)
+        btn_back.addTarget(self, action: #selector(Vc_TTS.btn_backB(_:)), for: .touchUpInside)
         
-        iv_topLine.frame = CGRectMake(0, 63, screenWidth, 1)
+        iv_topLine.frame = CGRect(x: 0, y: 63, width: screenWidth, height: 1)
     }
 }

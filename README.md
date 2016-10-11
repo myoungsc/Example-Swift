@@ -1,5 +1,5 @@
 # Example-Swift
-Swift Example
+ Swift Example
 
 # Development Environment
   - Xcode Version 7.3
@@ -18,4 +18,4 @@ Swift Example
 
 
 # License
-Example-Swift is available under the MIT license.
+ Example-Swift is available under the MIT license.
