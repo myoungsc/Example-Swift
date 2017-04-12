@@ -18,4 +18,4 @@
 
 
 # License
- Example-Swift is available under the MIT license.
+ Example-Swift is available under the MIT license..
